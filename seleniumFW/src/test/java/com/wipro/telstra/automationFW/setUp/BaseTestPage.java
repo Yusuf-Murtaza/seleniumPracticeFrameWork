@@ -2,6 +2,7 @@ package com.wipro.telstra.automationFW.setUp;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -27,14 +29,13 @@ public class BaseTestPage extends ReadFileData {
 
 	public WebDriverWait wait;
 	public static EventFiringWebDriver driver;
+	
 	public WebEventListener eventListener;
 	public String currnetlocation = System.getProperty("user.dir");
 	public String downloadFilepath = currnetlocation + "/Downloads/";
 	public static int tccount = 0;
-	//public String browserValue =browserToOpen;
-	//@Parameters({ "browser" })
+	
 	@BeforeMethod
-	//public void openBrowser(@Optional("firefox") String browser) {
 	public void openBrowser() {
 		tccount++;
 		try {
@@ -48,7 +49,7 @@ public class BaseTestPage extends ReadFileData {
 				
 				System.setProperty("webdriver.chrome.driver", currnetlocation + "/Drivers/chromedriver1.exe");
 				edriver = new ChromeDriver();
-			//	edriver.manage().window().maximize();
+			
 				edriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 			} else if (browserToOpen.equalsIgnoreCase("IE")) {
@@ -63,10 +64,6 @@ public class BaseTestPage extends ReadFileData {
 		} catch (WebDriverException e) {
 			System.out.println(e.getMessage());
 
-			/*
-			 * LoginPage loginPage = new LoginPage(driver);
-			 * loginPage.loginInteliCare(userName, passWord);
-			 */
 		}
 
 		driver = new EventFiringWebDriver(edriver);
@@ -74,7 +71,7 @@ public class BaseTestPage extends ReadFileData {
 		driver.register(eventListener);
 		driver.get(getUrl());
 		driver.manage().window().maximize();
-		//edriver.get(testUrl);
+		
 
 	}
 
@@ -90,11 +87,10 @@ public class BaseTestPage extends ReadFileData {
 
 		int testcount = TestListeners.count;
 		System.out.println("Number of Test Method from TL  =" + testcount);
-		//SLog sl = new SLog();
-		//sl.createWDBLog(0, testcount);
-
+		
 	}
 
+	
 	public WebDriver getDriver() {
 		return driver;
 	}

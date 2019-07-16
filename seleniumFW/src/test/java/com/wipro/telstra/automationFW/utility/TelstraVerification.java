@@ -54,6 +54,7 @@ public class TelstraVerification extends BasePage {
 		}
 	}
 
+	//Verifying actual and expected text
 	public static void verifyText(WebElement locator, String expectedText) throws NoSuchElementException {
 		String actualText;
 		try {
@@ -77,6 +78,7 @@ public class TelstraVerification extends BasePage {
 		}
 	}
 
+	//Verifying actual and expected string
 	public static void verifyString(String actualText, String expectedText) {
 
 		try {
@@ -99,52 +101,7 @@ public class TelstraVerification extends BasePage {
 		}
 	}
 
-// To verify invalid links in page
-/*
-	public static void verifyInvalidUrls(List<WebElement> locator) {
-		try {
 
-			int invalidLinksCount = 0;
-			List<WebElement> allLinks = locator;
-
-			System.out.println("Total no. of links are " + allLinks.size());
-			for (WebElement link : allLinks) {
-
-				if (link != null) {
-					String url = link.getAttribute("href");
-					System.out.println("URL :" + url);
-					if (url != null && !url.contains("javascript")) {
-						CommonMethods.veriyfURLStatus(url);
-					} else {
-						String inurl = link.getAttribute("href");
-						System.out.println("Total no. of invalid links are " + inurl);
-						invalidLinksCount++;
-
-					}
-
-				}
-
-			}
-
-			if (invalidLinksCount > 0) {
-				Reporter.log("FAIL Total no. of invalid links are " + invalidLinksCount);
-				System.out.println("FAIL Total no. of invalid links are " + invalidLinksCount);
-
-			} else {
-				Reporter.log(
-						"PASS There are no invalid links in the current page, out of total links " + allLinks.size());
-				System.out.println(
-						"PASS There are no invalid links in the current page, out of total links:" + allLinks.size());
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
-
-	}
-*/
 // Method to check attribute of class
 	public static void verifyHasClass(WebDriver driver, WebElement element, String value) {
 		String classes = element.getAttribute("class");
@@ -215,36 +172,6 @@ public class TelstraVerification extends BasePage {
 
 	}
 
-	/*public static void isWindowPresent(WebDriver driver, WebElement locator) {
-		try {
-			if (locator.isDisplayed()) {
-				AddNewThresholdPages addNewThresholdPage = new AddNewThresholdPages(driver);
-				addNewThresholdPage.addNewThresholdoverrideButton.click();
-				WebElement actThreshold = addNewThresholdPage.thresholdName(driver,
-						AddNewThresholdTestCases.ThresholdName);
-				System.out.println("Created Threshold name :" + actThreshold.getText());
-				DiverseyVerification.verifyText(actThreshold, AddNewThresholdTestCases.ThresholdName);
-			}
-		} catch (NoSuchElementException ex) {
-			AddNewThresholdPages addNewThresholdPage = new AddNewThresholdPages(driver);
-			WebElement actThreshold = addNewThresholdPage.thresholdName(driver, AddNewThresholdTestCases.ThresholdName);
-			System.out.println("Created Threshold name :" + actThreshold.getText());
-			DiverseyVerification.verifyText(actThreshold, AddNewThresholdTestCases.ThresholdName);
-
-		}
-	}*/
-
-	/*public static void isSaveOverrideWindowPresent(WebDriver driver, WebElement locator) {
-		try {
-			if (locator.isDisplayed()) {
-				AddNewThresholdPages addNewThresholdPage = new AddNewThresholdPages(driver);
-				addNewThresholdPage.addNewThresholdoverrideButton.click();
-
-			}
-		} catch (NoSuchElementException ex) {
-
-		}
-	}*/
 
 	public static void verifyDbCount(int actCount, int dbCount) {
 
@@ -263,24 +190,7 @@ public class TelstraVerification extends BasePage {
 		}
 
 	}
-	/*
-	 * public static void verifyElementNotPresent(WebDriver driver, WebElement
-	 * locator) throws Exception { try {
-	 * 
-	 * if (locator.isDisplayed()) { softAssert.assertTrue(false);
-	 * Reporter.log(locator.toString() + " Failed Element is Displayed");
-	 * System.out.println(locator.toString() + " Failed Element is Displayed");
-	 * 
-	 * }
-	 * 
-	 * } catch (NoSuchElementException error) { softAssert.assertTrue(true);
-	 * Reporter.log(" Passed Element is not Displayed");
-	 * System.out.println("Element not Present");
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
+
 
 	// To verify Alert present
 	public static void verifyIsAlertPresent(WebDriver driver) {
@@ -398,30 +308,7 @@ public class TelstraVerification extends BasePage {
 		}
 	}
 
-/*	public static void verifyImageLoaded(WebDriver driver) {
-		try {
-			int invalidImageCount = 0;
-			List<WebElement> imagesList = driver.findElements(By.tagName("img"));
-			System.out.println("Total no. of images are " + imagesList.size());
-			for (WebElement imgElement : imagesList) {
-				if (imgElement != null) {
-					CommonMethods.verifyimageActive(imgElement);
-				}
-			}
-			if (invalidImageCount > 0) {
-				System.out.println("Total no. of invalid images are " + invalidImageCount);
-				Reporter.log("Failed : All Images are not loaded, count of invalid images are : " + invalidImageCount);
-			} else {
-				System.out.println("Total no. of images loaded are " + imagesList.size());
-				Reporter.log("Passed : All Images in the current page loaded successfully");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
 
-	}
-*/
 	// Check the file from a specific directory
 	public static void isFileDownloaded(WebDriver driver, String fileName) {
 		String filePath = "C:\\Users\\yu251666\\Downloads";

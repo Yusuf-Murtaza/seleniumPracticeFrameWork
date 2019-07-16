@@ -15,9 +15,6 @@ public class AddToCartPagePages extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public String expAuthoriseSite = "Authorise Sites";
-	
-	
 	@FindBy(xpath="//*[text()='ADD TO CART']")
 	public WebElement buttonAddToCart;
 	
@@ -30,7 +27,7 @@ public class AddToCartPagePages extends BasePage{
 	@FindBy(xpath="//div[@class='_1Ox9a7']/a")
 	public WebElement productNameCheckOutPage;
 	
-	@FindBy(xpath="//div[@class='_2dcihZ']")
+	@FindBy(xpath="//span[text()='Cart']")
 	public WebElement buttonCartIcon;
 	
 	@FindBy(xpath="//div[@class='_1Ox9a7']/a")
@@ -42,6 +39,7 @@ public class AddToCartPagePages extends BasePage{
 	@FindBy(xpath="//span[text()='Remove']")
 	public WebElement buttonRemove;
 	
-	
+	@FindBy(xpath="//span[text()='Remove']")
+	public WebElement buttonContinueCheckout;
 	
 }

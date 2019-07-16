@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.wipro.telstra.automationFW.testCases.SearchPageTest">
+      <class name="com.wipro.telstra.automationFW.testCases.AddToCartPageTest">
         <methods>
+          <include name="addToCartNew"/>
           <include name="openBrowser"/>
-          <include name="logoutHover"/>
           <include name="createReport"/>
           <include name="tear"/>
         </methods>
-      </class> <!-- com.wipro.telstra.automationFW.testCases.SearchPageTest -->
+      </class> <!-- com.wipro.telstra.automationFW.testCases.AddToCartPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

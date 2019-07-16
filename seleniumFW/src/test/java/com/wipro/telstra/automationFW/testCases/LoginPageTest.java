@@ -19,16 +19,15 @@ import junit.framework.Assert;
 
 public class LoginPageTest extends BaseTestPage {
 
-	// Verify that User is able to login to website
+	// Verify that User is able to login to Flipkart website
+	
 	@Test
 	public void login() throws Exception {
 		LoginPagePages login = new LoginPagePages(driver);
-		CommonMethods.loginFlipkart();
-		//Thread.sleep(9000);
-		TelstraSynchronization.waitElementForVisible(driver, login.buttonMyAccount);
-		//System.out.println(driver.getTitle());
 		
+		CommonMethods.loginFlipkart();
+		
+		TelstraSynchronization.waitElementForVisible(driver, login.buttonMyAccount);
 	}
-
 	
 }

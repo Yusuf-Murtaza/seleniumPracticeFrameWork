@@ -15,9 +15,6 @@ public class SearchPagePages extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public String expAuthoriseSite = "Authorise Sites";
-	
-	
 	@FindBy(xpath="//input[@name='q']")
 	public WebElement textFieldSearch;
 		
@@ -35,6 +32,19 @@ public class SearchPagePages extends BasePage{
 	
 	@FindBy(xpath="//div[text()='Remove']")
 	public WebElement buttonRemove;
+	
+	@FindBy(xpath="//div[text()='My Account']")
+	public WebElement buttonMyAccount;
+	
+	@FindBy(xpath="//div[text()='Your cart is empty!']")
+	public WebElement textEmptyCart;
+	
+	
+	@FindBy(xpath="//*[@title='Flipkart']")
+	public WebElement titleFlipkart;
+	
+	@FindBy(xpath="//div[text()='Logout']")
+	public WebElement buttonLogout;
 	
 	@FindBy(xpath="//div[text()='Remove']")
 	public List<WebElement> buttonRemoveAll;

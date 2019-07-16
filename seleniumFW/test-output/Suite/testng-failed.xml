@@ -5,10 +5,9 @@
     <classes>
       <class name="com.wipro.telstra.automationFW.testCases.AddToCartPageTest">
         <methods>
-          <include name="productComparison"/>
+          <include name="addToCartNew"/>
           <include name="openBrowser"/>
           <include name="createReport"/>
-          <include name="addToCart"/>
           <include name="tear"/>
         </methods>
       </class> <!-- com.wipro.telstra.automationFW.testCases.AddToCartPageTest -->

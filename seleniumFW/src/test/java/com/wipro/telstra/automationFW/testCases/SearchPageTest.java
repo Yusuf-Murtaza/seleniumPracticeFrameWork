@@ -25,18 +25,19 @@ public class SearchPageTest extends BaseTestPage {
 	public static String searchItemName;
 	public static String searchItemCost;
 	
-	// Verify that User is able to search items in flipkart
+	// Verify that User is able to search items in Flipkart, select 1 item randomly and get the name and price
 	@Test
 	public static void searchItems() throws Exception {
 		
 		SearchPagePages search = new SearchPagePages(driver);
 		CommonMethods.loginFlipkart();
-		CommonMethods.clearCartAfterLogin();
+		
 		int count=1;
-		Thread.sleep(9000);
+		
+		TelstraSynchronization.waitisElementClickable(driver, search.textFieldSearch);
 		search.textFieldSearch.sendKeys(itemToSearch);
 		search.buttonSearch.click();
-		Thread.sleep(9000);
+		
 		int randVal = CommonMethods.usingMathClass();
 		System.out.println("Value of random j is "+randVal);
 		List<WebElement> searchResults = search.searchAllResults;
@@ -56,7 +57,6 @@ public class SearchPageTest extends BaseTestPage {
 				
 				searchResults.get(randVal).click();
 				System.out.println("Item clicked succesfully");
-				Thread.sleep(5000);
 				
 				break;
 			}
@@ -66,5 +66,6 @@ public class SearchPageTest extends BaseTestPage {
 		}
 
 	}
+
 
 }

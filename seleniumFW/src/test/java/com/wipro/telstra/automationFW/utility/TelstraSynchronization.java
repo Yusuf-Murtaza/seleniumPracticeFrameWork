@@ -72,14 +72,6 @@ public class TelstraSynchronization {
 			return false;
 		}
 }
-	/*
-	 * public static void waitElementForPageLoad() { if(document.readyState ==
-	 * 'complete') { Reporter.log(locator.toString() + ": Loaded successfully"); }
-	 * 
-	 * var interval = setInterval(function(){ if(document.readyState == 'complete')
-	 * { clearInterval(interval); done(); } },100);
-	 * 
-	 * }
-	 */
+
 
 }
